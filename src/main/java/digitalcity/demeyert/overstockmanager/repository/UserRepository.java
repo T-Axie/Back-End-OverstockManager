@@ -1,6 +1,6 @@
-package digitalcity.demeyert.overstockManager.repository;
+package digitalcity.demeyert.overstockmanager.repository;
 
-import digitalcity.demeyert.overstockManager.model.entity.Users;
+import digitalcity.demeyert.overstockmanager.model.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<Users, Long> {

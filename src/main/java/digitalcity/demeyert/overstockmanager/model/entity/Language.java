@@ -1,4 +1,4 @@
-package digitalcity.demeyert.overstockManager.model.entity;
+package digitalcity.demeyert.overstockmanager.model.entity;
 
 public enum Language {
     ENGLISH,

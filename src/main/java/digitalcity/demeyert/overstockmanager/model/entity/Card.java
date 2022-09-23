@@ -1,4 +1,4 @@
-package digitalcity.demeyert.overstockManager.model.entity;
+package digitalcity.demeyert.overstockmanager.model.entity;
 
 import lombok.*;
 
@@ -26,6 +26,20 @@ public class Card {
     private boolean signed;
     private boolean playset;
     private Rarity rarity;
+
+    public Card(int cardmarketId, String name, String explansion, Language language, int count, boolean foil, boolean signed, boolean playset, Rarity rarity, String comment) {
+        this.cardmarketId = cardmarketId;
+        this.name = name;
+        this.explansion = explansion;
+        this.language = language;
+        this.count = count;
+        this.foil = foil;
+        this.signed = signed;
+        this.playset = playset;
+        this.rarity = rarity;
+        this.comment = comment;
+    }
+
     private String comment;
 
 
