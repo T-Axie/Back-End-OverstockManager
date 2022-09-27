@@ -18,7 +18,8 @@ public class Collec {
     private String name;
     private String type;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "collec_card_list",
+    @JoinTable(
+            name = "collec_card_list",
             joinColumns = @JoinColumn(name = "collec_id"),
             inverseJoinColumns = @JoinColumn(name = "card_id")
     )

@@ -1,20 +1,17 @@
-package digitalcity.demeyert.overstockmanager.model.entity;
+package digitalcity.demeyert.overstockmanager.model.dto;
 
+import digitalcity.demeyert.overstockmanager.model.entity.State;
+import digitalcity.demeyert.overstockmanager.model.entity.Language;
+import digitalcity.demeyert.overstockmanager.model.entity.Rarity;
 import lombok.*;
-import org.hibernate.Hibernate;
 
-import javax.persistence.*;
-import java.util.Objects;
 
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "card")
-public class Card {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+@EqualsAndHashCode
+public class CardDTO {
+
     private Long id;
     private int cardmarketId;
     private String name;
@@ -28,7 +25,7 @@ public class Card {
     private State state;
     private String comment;
 
-    public Card(int cardmarketId, String name, String gameSet, Language language, int count, boolean foil, boolean signed, boolean playset, Rarity rarity, State state, String comment) {
+    public CardDTO(int cardmarketId, String name, String gameSet, Language language, int count, boolean foil, boolean signed, boolean playset, Rarity rarity, State state, String comment) {
         this.cardmarketId = cardmarketId;
         this.name = name;
         this.gameSet = gameSet;
@@ -136,18 +133,5 @@ public class Card {
 
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Card card = (Card) o;
-        return id != null && Objects.equals(id, card.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
     }
 }
