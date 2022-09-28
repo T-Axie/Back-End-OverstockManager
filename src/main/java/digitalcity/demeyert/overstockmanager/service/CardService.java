@@ -14,6 +14,7 @@ public class CardService {
     private final CardRepository repository;
     private final CardMapper mapper;
 
+
     public CardService(CardRepository repository, CardMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
@@ -24,5 +25,6 @@ public class CardService {
             throw new IllegalArgumentException("inserted name cannot be empty");
         return repository.findCardsByNameContaining(name).stream().map(mapper::fromEntities).collect(Collectors.toList());
     }
+
 }
 
