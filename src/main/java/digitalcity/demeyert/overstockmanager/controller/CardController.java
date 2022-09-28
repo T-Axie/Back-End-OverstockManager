@@ -21,4 +21,6 @@ public class CardController {
     public List<CardDTO> getByName(@RequestBody String name){
         return service.CardByName(name);
     }
+
+
 }
