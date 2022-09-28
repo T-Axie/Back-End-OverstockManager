@@ -23,23 +23,23 @@ public class CSVController {
         this.fileService = fileService;
     }
 
-    @PostMapping(value = "/upload", consumes = { "multipart/form-data" })
-    public ResponseEntity<ResponseMessage> uploadFile(@RequestParam MultipartFile file) {
-        String message = "";
-
-        if (CSVHelper.hasCSVFormat(file)) {
-            try {
-                fileService.save(file);
-
-                message = "Uploaded the file successfully: " + file.getOriginalFilename();
-                return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
-            } catch (Exception e) {
-                message = "Could not upload the file: " + file.getOriginalFilename() + "!";
-                return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
-            }
-        }
-
-        message = "Please upload a csv file!";
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
-    }
+//    @PostMapping(value = "/upload", consumes = { "multipart/form-data" })
+//    public ResponseEntity<ResponseMessage> uploadFile(@RequestParam MultipartFile file) {
+//        String message = "";
+//
+//        if (CSVHelper.hasCSVFormat(file)) {
+//            try {
+//                fileService.save(file, id);
+//
+//                message = "Uploaded the file successfully: " + file.getOriginalFilename();
+//                return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
+//            } catch (Exception e) {
+//                message = "Could not upload the file: " + file.getOriginalFilename() + "!";
+//                return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
+//            }
+//        }
+//
+//        message = "Please upload a csv file!";
+//        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
+//    }
 }
