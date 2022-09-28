@@ -29,12 +29,4 @@ public class CSVService {
             throw new RuntimeException("fail to store csv data: " + e.getMessage());
         }
     }
-
-    public List<Card> getAllTutorials() {
-        return repository.findAll();
-    }
-
-    public List<Card> getAllCards() {
-        return repository.findAll();
-    }
 }

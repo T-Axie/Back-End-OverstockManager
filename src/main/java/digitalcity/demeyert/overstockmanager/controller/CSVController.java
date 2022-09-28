@@ -42,19 +42,4 @@ public class CSVController {
         message = "Please upload a csv file!";
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
     }
-
-    @GetMapping("/card")
-    public ResponseEntity<List<Card>> getAllCards() {
-        try {
-            List<Card> cards = fileService.getAllCards();
-
-            if (cards.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
-
-            return new ResponseEntity<>(cards, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 }

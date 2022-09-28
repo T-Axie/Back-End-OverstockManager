@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -42,101 +43,6 @@ public class Card {
         this.comment = comment;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getCardmarketId() {
-        return cardmarketId;
-    }
-
-    public void setCardmarketId(int cardmarketId) {
-        this.cardmarketId = cardmarketId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getGameSet() {
-        return gameSet;
-    }
-
-    public void setGameSet(String gameSet) {
-        this.gameSet = gameSet;
-    }
-
-    public Language getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(Language language) {
-        this.language = language;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public boolean isFoil() {
-        return foil;
-    }
-
-    public void setFoil(boolean foil) {
-        this.foil = foil;
-    }
-
-    public boolean isSigned() {
-        return signed;
-    }
-
-    public void setSigned(boolean signed) {
-        this.signed = signed;
-    }
-
-    public boolean isPlayset() {
-        return playset;
-    }
-
-    public void setPlayset(boolean playset) {
-        this.playset = playset;
-    }
-
-    public Rarity getRarity() {
-        return rarity;
-    }
-
-    public void setRarity(Rarity rarity) {
-        this.rarity = rarity;
-    }
-
-    public State getState() {
-        return state;
-    }
-
-    public void setState(State state) {
-        this.state = state;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
 
     @Override
     public boolean equals(Object o) {

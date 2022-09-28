@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface CardRepository extends JpaRepository<Card, Long> {
     List<Card> findCardsByGameSet (String set);
-    List<Card> findCardsByNameContaining (String name);
+    Card findCardsByName (String name);
     List<Card> findCardsByRarity (Rarity rarity);
-
 }
