@@ -46,4 +46,9 @@ public class CardController {
     public List<CardDTO> getByAll(){
         return service.getAll();
     }
+
+    @PostMapping("/add")
+    public CardDTO create(@RequestBody CardDTO cardDTO){
+        return service.create(cardDTO);
+    }
 }

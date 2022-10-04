@@ -58,4 +58,9 @@ public class CardService {
     public List<CardDTO> getAll () {
         return repository.findAll().stream().map(mapper::fromEntities).collect(Collectors.toList());
     }
+
+    public CardDTO create(CardDTO cardDTO) {
+        Card card = mapper.toEntities(cardDTO);
+        return mapper.fromEntities(repository.save(card));
+    }
 }

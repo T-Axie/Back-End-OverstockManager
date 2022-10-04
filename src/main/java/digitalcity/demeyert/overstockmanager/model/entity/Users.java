@@ -20,7 +20,8 @@ public class Users {
     @ManyToOne
     @JoinColumn(name = "collection_id")
     private Collec collection;
-
+    @OneToOne
+    private ImageModel userImage;
 
 
     public Long getId() {
