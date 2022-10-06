@@ -19,6 +19,7 @@ public class ImageModel {
     private Long id;
     private String name;
     private String type;
+//    modifier la length au besoin.
     @Column(length = 50000000)
     private byte[] picByte;
 

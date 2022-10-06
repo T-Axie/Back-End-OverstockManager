@@ -3,6 +3,7 @@ package digitalcity.demeyert.overstockmanager.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter @Setter
@@ -14,12 +15,12 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String username;
+    private String email;
     private String password;
-    @ManyToOne
-    @JoinColumn(name = "collection_id")
-    private Collec collection;
+    private String description;
+    private String username;
+    @OneToMany
+    private List<Collec> collec;
     @OneToOne
     private ImageModel userImage;
 
@@ -31,4 +32,5 @@ public class Users {
     public void setId(Long id) {
         this.id = id;
     }
+
 }

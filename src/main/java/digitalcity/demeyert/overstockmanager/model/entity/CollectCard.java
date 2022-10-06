@@ -8,22 +8,24 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import java.io.Serializable;
 
 @Entity
+@Data
 @Getter @Setter
-public class CollectCardQuantityTable {
+public class CollectCard implements Serializable {
 
     @EmbeddedId
-    private CollectCardId id;
+    private CollectCardId id = new CollectCardId();
 
-    @MapsId("id1")
+    @MapsId("idCard")
     @ManyToOne
     private Card card;
 
-    @MapsId("id2")
+    @MapsId("idCollec")
     @ManyToOne
     private Collec collec;
 
-    private String qtt;
+    private int qtt;
 
 }

@@ -16,9 +16,9 @@ public class CollecDTO {
     private Long id;
     private String name;
     private String type;
-    private List<Card> cardList = new java.util.ArrayList<>();
+    private List<CollectCardDTO> cardList = new java.util.ArrayList<>();
 
-    public CollecDTO(String name, String type, List<Card> cardList) {
+    public CollecDTO(String name, String type, List<CollectCardDTO> cardList) {
         this.name = name;
         this.type = type;
         this.cardList = cardList;

@@ -17,19 +17,14 @@ public class Collec {
     private Long id;
     private String name;
     private String type;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "collec_card_list",
-            joinColumns = @JoinColumn(name = "collec_id"),
-            inverseJoinColumns = @JoinColumn(name = "card_id")
-    )
-    private List<Card> cardList = new java.util.ArrayList<>();
+    @OneToMany(mappedBy = "collec")
+    private List<CollectCard> cardList = new java.util.ArrayList<>();
 
-    public List<Card> getCardList() {
+    public List<CollectCard> getCardList() {
         return cardList;
     }
 
-    public void setCardList(List<Card> cardList) {
+    public void setCardList(List<CollectCard> cardList) {
         this.cardList = cardList;
     }
 
